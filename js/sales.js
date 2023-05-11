@@ -1,22 +1,6 @@
 'use strict';
 
-const hours = [
-  '6am',
-  '7am',
-  '8am',
-  '9am',
-  '10am',
-  '11am',
-  '12pm',
-  '1pm',
-  '2pm',
-  '3pm',
-  '4pm',
-  '5pm',
-  '6pm',
-  '7pm'
-];
-
+const hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
 const seattle = {
   name: 'Seattle',
@@ -26,18 +10,52 @@ const seattle = {
   cookiesSoldPerHr: [],
 };
 
+const tokyo = {
+  name: 'Tokyo',
+  minCust: 3,
+  maxCust: 24,
+  avgCookieSale: 1.2,
+  cookiesSoldPerHr: [],
+};
+
+const dubai = {
+  name: 'Dubai',
+  minCust: 11,
+  maxCust: 38,
+  avgCookieSale: 3.7,
+  cookiesSoldPerHr: [],
+};
+
+const paris = {
+  name: 'Paris',
+  minCust: 20,
+  maxCust: 38,
+  avgCookieSale: 2.3,
+  cookiesSoldPerHr: [],
+};
+
+const lima = {
+  name: 'Lima',
+  minCust: 2,
+  maxCust: 16,
+  avgCookieSale: 4.6,
+  cookiesSoldPerHr: [],
+};
+//to figure random customers per hour
 function randomCustPerHr(minCust, maxCust) {
   return Math.floor(Math.random() * (maxCust - minCust) + minCust);
 }
-
+//to use random customer per hour figure * average cookie sale to get cookies sold per hour estimate & add each hour to array in object
 function calculateHourlyCookies(location) {
   for (let i = 0; i < hours.length; i++) {
     let cookiesSold = Math.ceil(randomCustPerHr(location.minCust, location.maxCust) * location.avgCookieSale);
     location.cookiesSoldPerHr.push(cookiesSold);
   }
 }
+//made section in sales.html with id to access it by
 const salesNumbersContainer = document.getElementById('store-sales');
 
+//to display the cookie sales numbers for each location with a heading and bulleted hourly sales list ending with a cookies sold total for the day
 function displaySalesNumbers(location) {
   calculateHourlyCookies(location);
 
@@ -55,6 +73,7 @@ function displaySalesNumbers(location) {
 
   for (let i = 0; i < hours.length; i++) {
     totalCookies = location.cookiesSoldPerHr[i] + totalCookies;
+
     const listItem = document.createElement('li');
     list.appendChild(listItem);
     listItem.textContent = `${hours[i]}: ${location.cookiesSoldPerHr[i]} cookies`;
@@ -63,37 +82,8 @@ function displaySalesNumbers(location) {
   list.appendChild(totalDailyCookies);
   totalDailyCookies.textContent = `Total: ${totalCookies} cookies`;
 }
-// displaySalesNumbers()
-
-const tokyo = {
-  minCust: 3,
-  maxCust: 24,
-  avgCookieSale: 1.2,
-};
-
-const dubai = {
-  minCust: 11,
-  maxCust: 38,
-  avgCookieSale: 3.7,
-};
-
-const paris = {
-  minCust: 20,
-  maxCust: 38,
-  avgCookieSale: 2.3,
-};
-
-const lima = {
-  minCust: 2,
-  maxCust: 16,
-  avgCookieSale: 4.6,
-};
-
-
-
-
-
-// // update locations so that the structure satisfies the required interface for displaySalesNumbers(location)
-// call the function for all of the locations
-// if you feel like it, put all of them locations in an array and loop over it to call the function (but you don’t have to)
-// as a thought exercise, what’s gonna happen to the seattle object if I call calculateHourlyCookies(seattle) twice in a row
+displaySalesNumbers(seattle);
+displaySalesNumbers(tokyo);
+displaySalesNumbers(dubai);
+displaySalesNumbers(paris);
+displaySalesNumbers(lima);
