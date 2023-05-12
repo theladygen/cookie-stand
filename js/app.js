@@ -41,10 +41,14 @@ const lima = {
   avgCookieSale: 4.6,
   cookiesSoldPerHr: [],
 };
+
+
 //to figure random customers per hour
 function randomCustPerHr(minCust, maxCust) {
   return Math.floor(Math.random() * (maxCust - minCust) + minCust);
 }
+
+
 //to use random customer per hour figure * average cookie sale to get cookies sold per hour estimate & add each hour to array in object
 function calculateHourlyCookies(location) {
   for (let i = 0; i < hours.length; i++) {
@@ -52,8 +56,12 @@ function calculateHourlyCookies(location) {
     location.cookiesSoldPerHr.push(cookiesSold);
   }
 }
+
+
 //made section in sales.html with id to access it by
 const salesNumbersContainer = document.getElementById('store-sales');
+
+
 
 //to display the cookie sales numbers for each location with a heading and bulleted hourly sales list ending with a cookies sold total for the day
 function displaySalesNumbers(location) {
@@ -82,8 +90,21 @@ function displaySalesNumbers(location) {
   list.appendChild(totalDailyCookies);
   totalDailyCookies.textContent = `Total: ${totalCookies} cookies`;
 }
-displaySalesNumbers(seattle);
-displaySalesNumbers(tokyo);
-displaySalesNumbers(dubai);
-displaySalesNumbers(paris);
-displaySalesNumbers(lima);
+
+const allLocations = [seattle, tokyo, dubai, paris, lima];
+
+for(let i = 0; i < allLocations.length; i++) {
+  displaySalesNumbers(allLocations[i]);
+}
+
+// displaySalesNumbers(seattle);
+// displaySalesNumbers(tokyo);
+// displaySalesNumbers(dubai);
+// displaySalesNumbers(paris);
+// displaySalesNumbers(lima);
+
+
+
+
+
+
