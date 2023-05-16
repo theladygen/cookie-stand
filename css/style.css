@@ -1,5 +1,5 @@
 body {
-  background-color: brown;
+  background-color: rgb(165, 42, 42);
   font-family: Georgia, Times, serif;
 }
 
@@ -60,5 +60,6 @@ td{
 tr, td {
   border: 1px solid aquamarine;
   border-collapse: collapse;
-  color:bisque
+  color:bisque;
+  background-color: rgb(40, 35, 35);
 }

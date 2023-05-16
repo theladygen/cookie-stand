@@ -69,13 +69,7 @@ Location.prototype.render = function() {
 };
 
 
-// //all location totals by hour row
-// function buildFooter() {
-//   for(let i = 0; i < totalAllLocations.length; i++) {
-//     cookiesSoldPerHr.push(totalAllLocations[i]);
-//   }
-// }
-
+//all location totals by hour and Totals written in first cell no worky
 Location.prototype.totals = function () {
   let grandTotals = 0;
   for(let i = 0; i < hours.length; i++) {
@@ -87,7 +81,7 @@ Location.prototype.totals = function () {
   }
   const foot = document.createElement('th');
   salesTable.append(foot);
-  foot.textContent = grandTotals;
+  foot.textContent = `Totals${grandTotals}`;
 };
 
 
@@ -105,4 +99,3 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
-
