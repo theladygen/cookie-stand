@@ -1,6 +1,6 @@
 'use strict';
 
-const hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
+const hours = ['6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','Daily Location Total'];
 
 
 function Location(name, minCust, maxCust, avgCookieSale) {
@@ -32,7 +32,18 @@ Location.prototype.calculateHourlyCookies = function() {
 
 
 const salesTable = document.getElementById('sales-table');
-
+function buildHeader() {
+  //trying to add blank cells before the hours so they align
+  // const blankCells = document.createElement('th colspan="2');
+  // salesTable.append(blankCells);
+  // salesTable.insertCell();
+  for(let i = 0; i < hours.length; i++) {
+    const head = document.createElement('th');
+    salesTable.append(head);
+    head.textContent = hours[i];
+  }
+}
+buildHeader();
 
 //this render function creates a table row, fills it with data, and adds it to the sales table
 Location.prototype.render = function() {
@@ -40,7 +51,6 @@ Location.prototype.render = function() {
 
   let tableRow = document.createElement('tr');
   salesTable.append(tableRow);
-
   const store = document.createElement('td');
   tableRow.appendChild(store);
   store.textContent = this.name;
@@ -51,9 +61,7 @@ Location.prototype.render = function() {
     hourlySales.textContent = this.cookiesSoldPerHr[i];
   }
 
-
   let totalDailyCookies = 0;
-
   for (let i = 0; i < hours.length; i++) {
     totalDailyCookies = totalDailyCookies + this.cookiesSoldPerHr[i];
   }
@@ -64,22 +72,13 @@ Location.prototype.render = function() {
 
 
 
-function buildSalesTable () {
-  buildHeader();
-//loop over locations and render them
-//all location totals by hour row
-}
 
-function buildHeader() {
-  //this function is going to create a row printing all hours in colums then add row (append)
-}
-
-function totalAllLocations() {
-
-  for(let i = 0; i < totalAllLocations.length; i++) {
-    this.displaySalesNumbers.push(totalAllLocations[i]);
-  }
-}
+// //all location totals by hour row
+// function buildFooter() {
+//   for(let i = 0; i < totalAllLocations.length; i++) {
+//     cookiesSoldPerHr.push(totalAllLocations[i]);
+//   }
+// }
 
 let seattle = new Location('Seattle', 23, 65, 6.3);
 let tokyo = new Location('Tokyo', 3, 24, 1.2);
@@ -89,4 +88,10 @@ let lima = new Location('Lima', 2, 16, 4.6);
 
 const locations = [seattle, tokyo, dubai, paris, lima];
 
-buildSalesTable();
+seattle.render();
+tokyo.render();
+dubai.render();
+paris.render();
+lima.render();
+
+// buildFooter();
