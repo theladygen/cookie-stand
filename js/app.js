@@ -33,10 +33,8 @@ Location.prototype.calculateHourlyCookies = function() {
 
 const salesTable = document.getElementById('sales-table');
 function buildHeader() {
-  //trying to add blank cells before the hours so they align
-  // const blankCells = document.createElement('th colspan="2');
-  // salesTable.append(blankCells);
-  // salesTable.insertCell();
+  //need to add blank cells before the hours so they align
+  //better way to add "Daily Location Total" than in the hours array?
   for(let i = 0; i < hours.length; i++) {
     const head = document.createElement('th');
     salesTable.append(head);
@@ -71,14 +69,28 @@ Location.prototype.render = function() {
 };
 
 
-
-
 // //all location totals by hour row
 // function buildFooter() {
 //   for(let i = 0; i < totalAllLocations.length; i++) {
 //     cookiesSoldPerHr.push(totalAllLocations[i]);
 //   }
 // }
+
+Location.prototype.totals = function () {
+  let grandTotals = 0;
+  for(let i = 0; i < hours.length; i++) {
+    let hourlyTotals = 0;
+    for(let j = 0; j < locations.length; j++) {
+      hourlyTotals = hourlyTotals + locations[j].calculateHourlyCookies[i];
+      grandTotals = grandTotals + locations[j].calculateHourlyCookies[i];
+    }
+  }
+  const foot = document.createElement('th');
+  salesTable.append(foot);
+  foot.textContent = grandTotals;
+};
+
+
 
 let seattle = new Location('Seattle', 23, 65, 6.3);
 let tokyo = new Location('Tokyo', 3, 24, 1.2);
@@ -94,4 +106,3 @@ dubai.render();
 paris.render();
 lima.render();
 
-// buildFooter();
