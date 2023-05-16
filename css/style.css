@@ -50,16 +50,15 @@ p {
 
 th {
   color: aquamarine;
-  padding: 8px;
-}
-
-td{
   padding: 0.5em;
+  vertical-align: middle;
+  text-align: left;
 }
 
-tr, td {
+td {
   border: 1px solid aquamarine;
   border-collapse: collapse;
+  padding: 0.5em;
   color:bisque;
   background-color: rgb(40, 35, 35);
 }

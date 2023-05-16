@@ -1,6 +1,6 @@
 'use strict';
 
-const hours = ['6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','Daily Location Total'];
+const hours = ['6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm'];
 
 
 function Location(name, minCust, maxCust, avgCookieSale) {
@@ -33,22 +33,28 @@ Location.prototype.calculateHourlyCookies = function() {
 
 const salesTable = document.getElementById('sales-table');
 function buildHeader() {
-  //need to add blank cells before the hours so they align
-  //better way to add "Daily Location Total" than in the hours array?
+  const row = document.createElement('tr');
+  salesTable.appendChild(row);
+  const blank = document.createElement('th');
+  row.appendChild(blank);
+
   for(let i = 0; i < hours.length; i++) {
     const head = document.createElement('th');
-    salesTable.append(head);
+    row.appendChild(head);
     head.textContent = hours[i];
   }
+  const total = document.createElement('th');
+  row.appendChild(total);
+  total.textContent = 'Daily Location Total';
 }
-buildHeader();
+
 
 //this render function creates a table row, fills it with data, and adds it to the sales table
 Location.prototype.render = function() {
   this.calculateHourlyCookies();
 
   let tableRow = document.createElement('tr');
-  salesTable.append(tableRow);
+  salesTable.appendChild(tableRow);
   const store = document.createElement('td');
   tableRow.appendChild(store);
   store.textContent = this.name;
@@ -70,19 +76,31 @@ Location.prototype.render = function() {
 
 
 //all location totals by hour and Totals written in first cell no worky
-Location.prototype.totals = function () {
-  let grandTotals = 0;
+function renderTotals() {
+  let grandTotal = 0;
+
+  const row = document.createElement('tr');
+  salesTable.appendChild(row);
+  const totalLabel = document.createElement('th');
+  row.appendChild(totalLabel);
+  totalLabel.textContent = 'Totals';
+
   for(let i = 0; i < hours.length; i++) {
-    let hourlyTotals = 0;
+    let hourlyTotal = 0;
     for(let j = 0; j < locations.length; j++) {
-      hourlyTotals = hourlyTotals + locations[j].calculateHourlyCookies[i];
-      grandTotals = grandTotals + locations[j].calculateHourlyCookies[i];
+      hourlyTotal = hourlyTotal + locations[j].cookiesSoldPerHr[i];
+      grandTotal = grandTotal + locations[j].cookiesSoldPerHr[i];
     }
+    const cell = document.createElement('th');
+    row.appendChild(cell);
+    cell.textContent = hourlyTotal;
   }
+
   const foot = document.createElement('th');
-  salesTable.append(foot);
-  foot.textContent = `Totals${grandTotals}`;
-};
+  row.appendChild(foot);
+  foot.textContent = grandTotal;
+}
+// totals();
 
 
 
@@ -92,10 +110,12 @@ let dubai = new Location('Dubai', 11, 38, 3.7);
 let paris = new Location('Paris', 20, 38, 3.7);
 let lima = new Location('Lima', 2, 16, 4.6);
 
+
 const locations = [seattle, tokyo, dubai, paris, lima];
 
-seattle.render();
-tokyo.render();
-dubai.render();
-paris.render();
-lima.render();
+buildHeader();
+for(let i = 0; i < locations.length; i++) {
+  locations[i].render();
+}
+
+renderTotals();
