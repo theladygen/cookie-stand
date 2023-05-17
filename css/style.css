@@ -55,6 +55,23 @@ th {
   text-align: left;
 }
 
+#total-label, #hourly-total {
+  border: 1px solid aquamarine;
+  border-collapse: collapse;
+  padding: 0.5em;
+  color:bisque;
+  background-color: rgb(40, 35, 35);
+}
+
+
+#grand-total {
+  border: 1px solid aquamarine;
+  border-collapse: collapse;
+  padding: 0.5em;
+  color:bisque;
+  background-color: rgb(40, 35, 35);
+}
+
 td {
   border: 1px solid aquamarine;
   border-collapse: collapse;
