@@ -1,5 +1,5 @@
 body {
-  background-color: brown;
+  background-color: rgb(165, 42, 42);
   font-family: Georgia, Times, serif;
 }
 
@@ -35,11 +35,47 @@ li {
   margin-left: 40px;
   font-family: Verdana, sans-serif;
 }
-
 section {
   color: aquamarine;
 }
-
 p {
   color: aquamarine;
+}
+
+#sales-table {
+  margin: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  color: aquamarine;
+  padding: 0.5em;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#total-label, #hourly-total {
+  border: 1px solid aquamarine;
+  border-collapse: collapse;
+  padding: 0.5em;
+  color:bisque;
+  background-color: rgb(40, 35, 35);
+}
+
+
+#grand-total {
+  border: 1px solid aquamarine;
+  border-collapse: collapse;
+  padding: 0.5em;
+  color:bisque;
+  background-color: rgb(40, 35, 35);
+}
+
+td {
+  border: 1px solid aquamarine;
+  border-collapse: collapse;
+  padding: 0.5em;
+  color:bisque;
+  background-color: rgb(40, 35, 35);
 }
