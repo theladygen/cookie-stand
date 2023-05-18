@@ -15,6 +15,7 @@ This a website with information about Pat's Salmon Cookies!
 * 5/13/2023 created new branch class 07, added constructors for objects and utilized prototypes for functions, attempted creating table with displays unsuccessfully, waiting to merge branch
 * 5/15/23 fixed render function and added table, table data, and header and header function, css styling, and updated README logs and lighthouse png, attempted footer with grand totals but does not work
 * 5/16/23 added table background and cleaned up spacing and commented out code. Updated README.
+* 5/17/23 remade class06 branch that I merged and deleted before grading occured.
 
 ### Lighthouse Accessibility Report Score
 
