@@ -1,6 +1,10 @@
 body {
-  background-color: rgb(165, 42, 42);
+  background-color: rgb(105, 23, 23);
   font-family: Georgia, Times, serif;
+}
+
+header {
+  background-color: rgba(40, 35, 35, 0.722);
 }
 
 h1 {
@@ -10,7 +14,7 @@ h1 {
   margin-top: 1em;
   font-family: 'Quicksand', sans-serif;
 }
-.salmon {
+.salmon, #chinook {
   width: 40%;
   display: block;
   margin-left: auto;
@@ -35,10 +39,8 @@ li {
   margin-left: 40px;
   font-family: Verdana, sans-serif;
 }
-section {
-  color: aquamarine;
-}
-p {
+
+section, div, p {
   color: aquamarine;
 }
 
@@ -78,4 +80,22 @@ td {
   padding: 0.5em;
   color:bisque;
   background-color: rgb(40, 35, 35);
+}
+
+footer {
+  background-color: rgba(40, 35, 35, 0.722);
+  height: 400px;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact {
+  text-align: center;
+}
+
+.copy {
+  text-align: right;
 }

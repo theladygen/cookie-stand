@@ -16,6 +16,7 @@ This a website with information about Pat's Salmon Cookies!
 * 5/15/23 fixed render function and added table, table data, and header and header function, css styling, and updated README logs and lighthouse png, attempted footer with grand totals but does not work
 * 5/16/23 added table background and cleaned up spacing and commented out code. Updated README.
 * 5/17/23 restored class06-objects and class07 branches that I merged and deleted before grading occured.
+* 5/18/23 and 5/19/23 began adding CSS to index and sales pages
 
 ### Lighthouse Accessibility Report Score
 
