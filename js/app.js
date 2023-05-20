@@ -114,6 +114,39 @@ function renderTotals() {
   foot.textContent = grandTotal;
 }
 
+// const newStore = document.getElementById('store-form');
+
+// newStore.addEventListener('submit', function (addNewStore) {
+//   Event.preventDefault();
+//   const name = Event.target.name.value;
+//   const minCust = Event.target.number.value;
+//   const maxCust = Event.target.number.value;
+//   const avgCookieSale = Event. target.number.value;
+//   const newLocation = new Location();
+//   locations.push(newLocation);
+
+//   renderSalesReport();
+// }
+// addNewStore();
+
+
+
+// const newStore = document.querySelector('store-form');
+
+// function handleSubmit(event) {
+//   event.preventDefault();
+
+//   let name = event.target.name.value;
+//   let minCust = event.target.number.value;
+//   let maxCust = event.target.number.value;
+//   let avgCookieSale = event.target.number.value;
+//   let cookiesSoldPerHr = [];
+
+//   const newLocation = new Location ('name', 'minCust', 'maxCust', 'avgCookieSale')
+// }
+// newStore.addEventListener('submit', handleSubmit);
+
+
 
 const locations = [
   new Location('Seattle', 23, 65, 6.3),
@@ -123,8 +156,11 @@ const locations = [
   new Location('Lima', 2, 16, 4.6),
 ];
 
+// function renderSalesReport() {
+// salesTable.innerHTML = "";
 buildHeader();
 for(let i = 0; i < locations.length; i++) {
-  locations[i].render();
+locations[i].render();
 }
 renderTotals();
+//  };
