@@ -19,10 +19,21 @@
     <a href="../index.html">Home</a>
   </header>
   <main>
-  <table id = "sales-table">
-    
-  </table>
+  <table id = "sales-table"></table>
+
+  <form id="store-form" action="">
+    <fieldset>
+      <legend>New Store Information</legend>
+      <label for="">Location: <input id= "name" name = 'name' placeholder = "Store Location" required type = "text"></label>
+      <label>Minimum Customers Per Hour: <input id= "number" name = "number" placeholder = "Min Cust Per Hr" required type = "number"></label>
+      <label>Maximum Customers Per Hour: <input id= "number" name = "number" placeholder = "Max Cust Per Hr" required type = "number"></label>
+      <label>Average Cookies Per Hour: <input id= "number" name = "number" placeholder = "Avd Cookies Per Hr" required type = "number"></label>
+      <button type = "submit">Submit</button>
+    </fieldset>
+  </form>
+
   </main>
+
   <footer>
     <img src="../img/chinook.jpg" alt="drawing of a chinook salmon" class="salmon">
     <p class="contact">Pat's is open 7 days a week from 6am-8pm ... <br>Every day is a cookie day at Pat's!</p>
