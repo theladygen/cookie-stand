@@ -17,6 +17,7 @@ This a website with information about Pat's Salmon Cookies!
 * 5/16/23 added table background and cleaned up spacing and commented out code. Updated README.
 * 5/17/23 restored class06-objects and class07 branches that I merged and deleted before grading occured.
 * 5/18/23 and 5/19/23 began adding CSS to index and sales pages
+* 5/20/23 firmed up CSS styling and fixed broken photo link on sales page
 
 ### Lighthouse Accessibility Report Score
 
