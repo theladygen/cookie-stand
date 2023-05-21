@@ -25,20 +25,18 @@ function Location(name, minCust, maxCust, avgCookieSale) {
   this.cookiesSoldPerHr = [];
 }
 
-
 Location.prototype.randomCustPerHr = function() {
   return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
 };
-
 
 Location.prototype.calculateHourlyCookies = function() {
   for (let i = 0; i < hours.length; i++) {
     let custPerHr = this.randomCustPerHr();
     let cookiesSold = Math.ceil(custPerHr * this.avgCookieSale);
+    console.log('thatthat', custPerHr, cookiesSold);
     this.cookiesSoldPerHr.push(cookiesSold);
   }
 };
-
 
 const salesTable = document.getElementById('sales-table');
 function buildHeader() {
@@ -57,7 +55,6 @@ function buildHeader() {
   row.appendChild(total);
   total.textContent = 'Daily Location Total';
 }
-
 
 Location.prototype.render = function() {
   this.calculateHourlyCookies();
@@ -82,7 +79,6 @@ Location.prototype.render = function() {
   tableRow.appendChild(total);
   total.textContent = totalDailyCookies;
 };
-
 
 function renderTotals() {
   let grandTotal = 0;
@@ -114,61 +110,21 @@ function renderTotals() {
   foot.textContent = grandTotal;
 }
 
-// const newStore = document.getElementById('store-form');
+const newStore = document.getElementById('store-form');
 
-// newStore.addEventListener('submit', function (addNewStore) {
-//   Event.preventDefault();
-//   const name = Event.target.name.value;
-//   const minCust = Event.target.number.value;
-//   const maxCust = Event.target.number.value;
-//   const avgCookieSale = Event. target.number.value;
-//   const newLocation = new Location();
-//   locations.push(newLocation);
+newStore.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-//   renderSalesReport();
-// }
-// addNewStore();
+  const name = event.target.name.value;
+  const minCust = parseInt(event.target.minCust.value);
+  const maxCust = parseInt(event.target.maxCust.value);
+  const avgCookies = parseFloat(event.target.avgCookies.value);
 
+  const newLocation = new Location(name, minCust, maxCust, avgCookies);
+  locations.push(newLocation);
 
-
-// const newStore = document.querySelector('store-form');
-
-// function handleSubmit(event) {
-//   event.preventDefault();
-
-//   let name = event.target.name.value;
-//   let minCust = event.target.number.value;
-//   let maxCust = event.target.number.value;
-//   let avgCookieSale = event.target.number.value;
-//   let cookiesSoldPerHr = [];
-
-
-
-
-//   const newLocation = new Location ('name', 'minCust', 'maxCust', 'avgCookieSale')
-// }
-// newStore.addEventListener('submit', handleSubmit);
-
-// const StoreForm = document.querySelector('form');
-// StoreForm.addEventListener('submit', addStore);
-//   event.preventDefault();
-
-
-
-
-// const btn = document.querySelector('button');
-
-// btn.addEventListener('submit', handleSubmit);
-// Event.preventDefault();
-
-// function handleSubmit() {
-//   salesTable.innerHTML = '';
-//   buildHeader();
-//   for(let i = 0; i < locations.length; i++) {
-//     locations[i].render();
-//   }
-//   renderTotals();
-// }
+  renderSalesReport();
+});
 
 const locations = [
   new Location('Seattle', 23, 65, 6.3),
@@ -178,10 +134,13 @@ const locations = [
   new Location('Lima', 2, 16, 4.6),
 ];
 
-// function renderSalesReport() {
-// salesTable.innerHTML = "";
-buildHeader();
-for(let i = 0; i < locations.length; i++) {
-  locations[i].render();
+function renderSalesReport() {
+  salesTable.innerHTML = '';
+  buildHeader();
+  for(let i = 0; i < locations.length; i++) {
+    console.log(locations[i]);
+    locations[i].render();
+  }
+  renderTotals();
 }
-renderTotals();
+renderSalesReport();
