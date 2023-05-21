@@ -146,6 +146,9 @@ function renderTotals() {
 // }
 // newStore.addEventListener('submit', handleSubmit);
 
+// const StoreForm = document.querySelector('form');
+// StoreForm.addEventListener('submit', addStore);
+//   event.preventDefault();
 
 
 const locations = [
@@ -160,7 +163,6 @@ const locations = [
 // salesTable.innerHTML = "";
 buildHeader();
 for(let i = 0; i < locations.length; i++) {
-locations[i].render();
+  locations[i].render();
 }
 renderTotals();
-//  };
