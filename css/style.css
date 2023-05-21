@@ -1,16 +1,16 @@
 body {
-  background-color: rgb(105, 23, 23);
-  font-family: Georgia, Times, serif;
+  background-color: rgb(69, 10, 10);
 }
 
 header {
-  background-color: rgba(40, 35, 35, 0.722);
+  background-color: rgba(40, 35, 35, 0.519);
   border: 4px solid black;
+  box-shadow: 4px  4px  12px 12px #000000;
 }
 
 h1 {
   color: whitesmoke;
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
   margin-top: 1em;
   font-family: 'Quicksand', sans-serif;
@@ -23,19 +23,16 @@ h1 {
   margin-right: auto;
   padding: 1em;
   border: 8px solid burlywood;
-}
-h3 {
-  color: whitesmoke;
-  font-size: 20px;
-  margin: 1em;
-  font-family: 'Quicksand', sans-serif;;
+  background-color: rgba(222, 184, 135, 0.541);
+  box-shadow: 3px  3px  3px 3px #000000;
+
 }
 
 a {
   color: aquamarine;
   display: flex;
   justify-content: center;
-  font-size: larger;
+  font-size: x-large;
   padding-bottom: 1em;
 }
 
@@ -48,6 +45,7 @@ li {
 
 section, div, p {
   color: aquamarine;
+  font-family: Georgia, Times, serif;
 }
 
 #sales-table {
@@ -61,6 +59,7 @@ th {
   padding: 0.5em;
   vertical-align: middle;
   text-align: left;
+  font-family: Verdana, sans-serif;
 }
 
 #total-label, #hourly-total {
@@ -69,6 +68,7 @@ th {
   padding: 0.5em;
   color:bisque;
   background-color: rgb(40, 35, 35);
+  font-family: Verdana, sans-serif;
 }
 
 
@@ -78,6 +78,7 @@ th {
   padding: 0.5em;
   color:bisque;
   background-color: rgb(40, 35, 35);
+  font-family: Verdana, sans-serif;
 }
 
 td {
@@ -86,12 +87,35 @@ td {
   padding: 0.5em;
   color:bisque;
   background-color: rgb(40, 35, 35);
+  font-family: Verdana, sans-serif;
+}
+form {
+  border: 4px solid rgb(40, 35, 35);;
+  margin-bottom: 1em;
+}
+fieldset {
+  color: bisque;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height:200px;
+  font-family: Verdana, sans-serif;
+}
+
+legend {
+  font-size: 20px;
+  font-family: Verdana, sans-serif;
+}
+
+button {
+  width: 100px;
 }
 
 footer {
-  background-color: rgba(40, 35, 35, 0.722);
-  height: 400px;
+  background-color: rgba(40, 35, 35, 0.519);
+  height: 500px;
   border: 4px solid black;
+  box-shadow: 4px  4px  12px 12px #000000;
 }
 
 footer div {
@@ -102,11 +126,14 @@ footer div {
 .contact {
   margin: 1em;
   text-align: center;
+  color: whitesmoke;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .copy {
   text-align: right;
   padding-right: 1em;
+  color: bisque;
 }
 
 #family {
@@ -115,12 +142,15 @@ footer div {
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
+  background-color: rgba(222, 184, 135, 0.541);
   border: 8px solid burlywood;
+  box-shadow: 3px  3px  3px 3px #000000;
 }
 
 .merch {
   height: 180px;
   border: 8px solid burlywood;
+  box-shadow: 3px  3px  3px 3px #000000;
 }
 .merchandise {
   display: flex;
@@ -129,4 +159,6 @@ footer div {
 .about, .pitch {
   text-align: center;
   margin: 2em;
+  font-family: Georgia, Times, serif;
+  font-size: large;
 }

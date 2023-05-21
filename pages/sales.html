@@ -19,19 +19,30 @@
     <a href="../index.html">Home</a>
   </header>
   <main>
-  <table id = "sales-table">
-    
-  </table>
+  <table id="sales-table"></table>
+
+  <form id="store-form">
+    <fieldset>
+      <legend>New Store Information</legend>
+      <label>Location: <input id="name" name='name' placeholder="Store Location" required type="text"></label>
+      <label>Minimum Customers Per Hour: <input id="minCust" name="minCust" placeholder="Min Cust Per Hr" required type="number"></label>
+      <label>Maximum Customers Per Hour: <input id="maxCust" name="maxCust" placeholder="Max Cust Per Hr" required type="number"></label>
+      <label>Average Cookies Per Hour: <input id="avgCookies" name="avgCookies" placeholder="Avg Cookies Per Hr" required type="number" step="0.1"> </label>
+      <button type="submit">Submit</button>
+    </fieldset>
+  </form>
+
   </main>
+
   <footer>
     <img src="../img/chinook.jpg" alt="drawing of a chinook salmon" class="salmon">
     <p class="contact">Pat's is open 7 days a week from 6am-8pm ... <br>Every day is a cookie day at Pat's!</p>
-    <p class="contact">Contact Us at 888-8GO-FISH!</p>
+    <p class="contact">Contact Us at <a href=mailto:"patssalmoncookies@fishymail.com">patssalmoncookies@fishymail.com</a>or 1-888-8GO-FISH!</p>
     <div>111 Lakeview Lane, Seattle</div>
     <div>222 Swim Street, Tokyo</div>
     <div>333 Algae Drive, Dubai</div>
     <div>444 Riverbend Circle, Paris</div>
-    <div>555 Ocean Parkway, Lima</div>
+    <div>555 Waterpark Way, Lima</div>
     <p class="copy">&copy; PSC 2023</p>
   </footer>
 </body>
