@@ -142,6 +142,9 @@ function renderTotals() {
 //   let avgCookieSale = event.target.number.value;
 //   let cookiesSoldPerHr = [];
 
+
+
+
 //   const newLocation = new Location ('name', 'minCust', 'maxCust', 'avgCookieSale')
 // }
 // newStore.addEventListener('submit', handleSubmit);
@@ -150,6 +153,22 @@ function renderTotals() {
 // StoreForm.addEventListener('submit', addStore);
 //   event.preventDefault();
 
+
+
+
+// const btn = document.querySelector('button');
+
+// btn.addEventListener('submit', handleSubmit);
+// Event.preventDefault();
+
+// function handleSubmit() {
+//   salesTable.innerHTML = '';
+//   buildHeader();
+//   for(let i = 0; i < locations.length; i++) {
+//     locations[i].render();
+//   }
+//   renderTotals();
+// }
 
 const locations = [
   new Location('Seattle', 23, 65, 6.3),
