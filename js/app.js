@@ -33,7 +33,6 @@ Location.prototype.calculateHourlyCookies = function() {
   for (let i = 0; i < hours.length; i++) {
     let custPerHr = this.randomCustPerHr();
     let cookiesSold = Math.ceil(custPerHr * this.avgCookieSale);
-    console.log('thatthat', custPerHr, cookiesSold);
     this.cookiesSoldPerHr.push(cookiesSold);
   }
 };
@@ -138,7 +137,6 @@ function renderSalesReport() {
   salesTable.innerHTML = '';
   buildHeader();
   for(let i = 0; i < locations.length; i++) {
-    console.log(locations[i]);
     locations[i].render();
   }
   renderTotals();
