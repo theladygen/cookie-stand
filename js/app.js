@@ -56,7 +56,10 @@ function buildHeader() {
 }
 
 Location.prototype.render = function() {
-  this.calculateHourlyCookies();
+  if(this.cookiesSoldPerHr.length === 0)
+  {
+    this.calculateHourlyCookies();
+  }
 
   let tableRow = document.createElement('tr');
   salesTable.appendChild(tableRow);
