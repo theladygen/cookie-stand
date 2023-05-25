@@ -19,9 +19,8 @@ This a website with information about Pat's Salmon Cookies!
 * 5/18/23 and 5/19/23 began adding CSS to index and sales pages
 * 5/20/23 firmed up CSS styling and fixed broken photo link on sales page, added new store form, but attempted unsuccessfully to get new Stores to render on table. Later commit fixed table and form input. Deleted console logs and formatted.
 * 5/21/23 added if statement to js to fix the table from overpopulating when new store was added
+* 5/25/23 changed footer height to auto
 
 ### Lighthouse Accessibility Report Score
 
 ![Screenshot of Lighthouse Accessibility Report Score](/img/lighthouse.png)
-
-### Reflections and Comments
